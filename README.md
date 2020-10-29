@@ -5,3 +5,5 @@ Wenn man keinen guten Film auf Netflix (oder wo auch immer) findet um zu schauen
 Die Fragen könnten beispielsweise sein: "Bist du heute eher in Stimmung um zu Lachen oder zu Weinen?" und der User muss dann Antwort geben.
 Anhand von allen Antworten kann dann ein Film vorgeschlagen werden aus einer Datei mit einer Tabelle aus ca. 25 Filmen die ich zusammen stelle.
 Ich habe überlegt dass die Anworten eine Buchstabenkombination ergeben, welche dann einen "Code" zusammenstellen, um einen Film auszuspucken.
+
+Meine Überlegung war, dass ich Filme aussuche und in eine Excel Tabelle eintrage mit den zugehörigen Details. Anhand von Genre (ich hätte es gerne noch genauer unterteilt nicht unbedingt nur Action etc, sondern eher nach Stimmung des Filmes oder so...), Filmlänge, Schauspieler?, Neuerscheinung oder Klassiker, ...
