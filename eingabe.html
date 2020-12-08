@@ -1,0 +1,37 @@
+<!DOCTIYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> FILMZER </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+<header> FILMZER </header>
+    <h1> Willkommen! </h1>
+<div>
+        <ul class="nav">
+            <a href="/index">Start</a>
+            <a href="{{ url_for('eingabe') }}">Eingabeformular</a>
+            <a href="/info">Info</a>
+        </ul>
+</div>
+    <h3> Bitte beantworte die Fragen. Diese sollen uns helfen dir den perfekten Film auszusuchen. Am besten ist es wenn du instinktiv antwortest. <br>
+        Die Fragen sollst du auf einer Skala von 1 bis 10 beantworten. 1 wäre die Niedrigste Wichtigkeit und 10 die höchste.</h3>
+   <form method="post">
+       <h4> Humor </h4>
+       <input type="text" name="laune" placeholder="Wie wichtig ist dir Humor?">
+       <br>
+       <h4> Tränen </h4>
+       <input type="text" name="dauer" placeholder="Darf der Film auch traurig sein?">
+       <br>
+       <h4> Spannung </h4>
+       <input type="text" name="spannung" placeholder="Wieviel Anspannung erträgst du heute?">
+       <br>
+       <button type="submit"> Antwort speichern</button>
+   </form>
+
+<footer> Ein Schulprojekt von Frances Knöpfel, DBM19VZ</footer>
+
+</body>
+</html>

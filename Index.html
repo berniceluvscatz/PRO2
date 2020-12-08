@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FILMZER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+<header> FILMZER </header>
+<div>
+        <ul class="nav">
+            <a href="/index">Start</a>
+            <a href="{{ url_for('eingabe') }}">Eingabeformular</a>
+            <a href="/info">Info</a>
+        </ul>
+</div>
+<h1> Willkommen auf FILMZER! </h1>
+<p>Hast du Muehe einen Film auszusuchen? Suchst du den perfekten Film für deine jetzige Stimmung aber findest ihn einfach nicht auf Netflix oder sonst wo?
+    Scrollst du schon so lange durch die Auswahl und schaust verloren Trailer an aber kein Film ist der richtige?
+    Dann bist du auf FILMZER richtig!
+    Wir helfen dir aufgrund von ein paar simplen Fragen den passenden Film für deinen Chiller Abend zu Hause zu finden!</p>
+
+<div class="button">
+<form method="POST">
+        <input type="text" name="vorname" placeholder="Bitte gib deinen Namen ein...">
+        <button type="submit">Senden</button>
+</form>
+</div>
+
+
+<footer> Ein Schulprojekt von Frances Knöpfel, DBM19VZ</footer>
+</body>
+</html>
