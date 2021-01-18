@@ -4,14 +4,12 @@ from flask import request
 
 from daten import speichern
 
-app = Flask("tracker")
+app = Flask("filmzer")
 
 
 @app.route('/')
-def start():
-    ueberschrifts_text = "Willkommen auf FILMZER"
-    einleitung_text = "Hier kannst du einen Filmvorschlag bekommen. Wie fühlst du dich?"
-    return render_template('start.html', app_name="FILMZER", ueberschrift=ueberschrifts_text, einleitung=einleitung_text)
+def main():
+    return "Willkommen!"
 
 @app.route('/eingabe', methods=['POST', 'GET'])
 def eingabe():
@@ -24,11 +22,9 @@ def eingabe():
 
     return render_template('eingabe.html', app_name="Tracker! - Eingabe")
 
-@app.route('/info')
-def about():
-    ueberschrifts_text = "Über diese Webapp"
-    einleitung_text = "Diese App wurde als Demo-App programmiert"
-    return render_template('start.html', app_name="Tracker! - About", ueberschrift=ueberschrifts_text, einleitung=einleitung_test)
-
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
+from flask import Flask, render_template
+def main():
+    return render_template('index.html')
