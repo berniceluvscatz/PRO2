@@ -1,37 +1,65 @@
-<!DOCTIYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title> FILMZER </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-</head>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filmzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index'%}">
+        <img src="{% static 'images/logo.jpg'%}" alt="" width="30" height="24" class="d-inline-block align-top">
+        Filmzer
+      </a>
+    </div>
+  </nav>
 
-<body>
-<header> FILMZER </header>
-    <h1> Willkommen! </h1>
-<div>
-        <ul class="nav">
-            <a href="/index">Start</a>
-            <a href="{{ url_for('eingabe') }}">Eingabeformular</a>
-            <a href="/info">Info</a>
-        </ul>
-</div>
-    <h3> Bitte beantworte die Fragen. Diese sollen uns helfen dir den perfekten Film auszusuchen. Am besten ist es wenn du instinktiv antwortest. <br>
-        Die Fragen sollst du auf einer Skala von 1 bis 10 beantworten. 1 wäre die Niedrigste Wichtigkeit und 10 die höchste.</h3>
-   <form method="post">
-       <h4> Humor </h4>
-       <input type="text" name="laune" placeholder="Wie wichtig ist dir Humor?">
-       <br>
-       <h4> Tränen </h4>
-       <input type="text" name="dauer" placeholder="Darf der Film auch traurig sein?">
-       <br>
-       <h4> Spannung </h4>
-       <input type="text" name="spannung" placeholder="Wieviel Anspannung erträgst du heute?">
-       <br>
-       <button type="submit"> Antwort speichern</button>
+  <h1 style="text-align:center;">Scale</h1>
+  <hr>
+
+  <div class="container">
+
+    <!-- <h5>film recommendations scale</h5>
+
+    <form action="" method="POST">
+    {% csrf_token %}
+    Enter User Funny Number <input type=text, class="form-control" name = num1><br>
+    Enter Film Funny Number <input type=text, class="form-control"name = num2><br>
+    <input type="Submit" class="btn btn-primary">
+    <p>The Result is {{res}}</p>
+    </form> -->
+        <br>
+        <form class="form-inline my-2 my-lg-0" method="get" action="/search" >
+          Funny Movie:
+	      <input class="form-control mr-sm-2" type="search" placeholder="Enter Funny Movie scale Number" aria-label="Search" name="query" id="query">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Funny Movie</button>
+	     </form>
+
+       <br><br>
+
+       <form class="form-inline my-2 my-lg-0" method="get" action="/search1" >
+         Sad Movie:
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter Sad Movie scale Number" aria-label="Search" name="query" id="query">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sad Movie</button>
+     </form>
+
+     <br><br>
+
+     <form class="form-inline my-2 my-lg-0" method="get" action="/search2" >
+       Intense Movie:
+    <input class="form-control mr-sm-2" type="search" placeholder="Enter Intense Movie scale Number" aria-label="Search" name="query" id="query">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Intense Movie</button>
    </form>
 
-<footer> Ein Schulprojekt von Frances Knöpfel, DBM19VZ</footer>
 
-</body>
+
+
+
+
+  </div>
+
+
+  </body>
 </html>
