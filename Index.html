@@ -1,36 +1,85 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>FILMZER</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filmzer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-</head>
-<body>
-<header> FILMZER </header>
-<div>
-        <ul class="nav">
-            <a href="/index">Start</a>
-            <a href="{{ url_for('eingabe') }}">Eingabeformular</a>
-            <a href="/info">Info</a>
-        </ul>
-</div>
-<h1> Willkommen auf FILMZER! </h1>
-<p>Hast du Muehe einen Film auszusuchen? Suchst du den perfekten Film für deine jetzige Stimmung aber findest ihn einfach nicht auf Netflix oder sonst wo?
-    Scrollst du schon so lange durch die Auswahl und schaust verloren Trailer an aber kein Film ist der richtige?
-    Dann bist du auf FILMZER richtig!
-    Wir helfen dir aufgrund von ein paar simplen Fragen den passenden Film für deinen Chiller Abend zu Hause zu finden!</p>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index'%}">
+        <img src="{% static 'images/logo.jpg'%}" alt="" width="30" height="24" class="d-inline-block align-top">
+        filmzer
+      </a>
 
-<div class="button">
-<form method="POST">
-        <input type="text" name="vorname" placeholder="Bitte gib deinen Namen ein...">
-        <button type="submit">Senden</button>
-</form>
-</div>
+      <a class="navbar-brand" style="margin-right:1350px" href="{% url 'scale'%}">
+
+        Scale
+      </a>
+    </div>
+  </nav>
+    <h1 style="text-align:center;">filmzer</h1>
+    <hr>
 
 
-<footer> Ein Schulprojekt von Frances Knöpfel, DBM19VZ</footer>
-</body>
+    <div class="container">
+      <h5>filmzer is the best movie recommendation  Web app. Period. Whether you want to search for films in the search field or you want to find films based on your mood, time available, setting, or reviews, the site has it all.</h5>
+
+      <!-- <form class="" action="" method="post">
+        {% csrf_token %} -->
+
+         <div class="" style="margin-top:50px">
+
+           <h3>Enter your Name:</h3>
+           <input type="text" class="form-control" name="name" placeholder="Enter your Name:">
+
+         </div>
+
+
+         <div class="" style="margin-top:20px">
+
+           <h3>Enter your Age:</h3>
+           <input type="text" class="form-control" name="age" placeholder="Enter your Age:">
+
+         </div>
+
+
+          <div class="" style="margin-top:20px">
+
+            <h3>What type of movie you want to see?</h3>
+
+            <div class="row" >
+               <div class="" style="padding:10px">
+                 <a href="{% url 'happy'%}"><button  type="button" class="btn btn-outline-primary">Happy</button></a>
+               </div>
+               <div class=""style="padding:10px">
+                 <a href="{% url 'average'%}"><button type="button" class="btn btn-outline-warning">Average</button></a>
+               </div>
+               <div class=""style="padding:10px">
+                   <a href="{% url 'sad'%}"><button type="button" class="btn btn-outline-danger">Sad</button></a>
+               </div>
+
+
+
+
+            </div>
+
+
+
+
+
+          </div>
+
+
+
+
+      <!-- </form> -->
+
+
+
+    </div>
+
+  </body>
 </html>
