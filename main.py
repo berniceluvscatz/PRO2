@@ -1,30 +1,67 @@
-from flask import Flask
-from flask import render_template
-from flask import request
+from django.shortcuts import render
+from . models import *
 
-from daten import speichern
+# Create your views here.
+def index(request):
+    return render(request,'base/index.html')
 
-app = Flask("filmzer")
+
+def Happy(request):
+    category=['1']
+    movie=Movies.objects.filter(category=category)
+    context = {'movie':movie}
+    return render(request,'base/happy.html',context)
 
 
-@app.route('/')
-def main():
-    return "Willkommen!"
+def Average(request):
+    category=['2']
+    movie=Movies.objects.filter(category=category)
+    context = {'movie':movie}
+    return render(request,'base/happy.html',context)
 
-@app.route('/eingabe', methods=['POST', 'GET'])
-def eingabe():
+def Sad(request):
+    category=['3']
+    movie=Movies.objects.filter(category=category)
+    context = {'movie':movie}
+    return render(request,'base/happy.html',context)
 
+
+def Scale(request):
+    res = 0
     if request.method == 'POST':
-        aktivitaet = request.form['aktivitaet']
-        dauer = request.form['dauer']
-        antwort = speichern(aktivitaet, dauer)
-        return 'Gespeicherte Daten: <br>' + str(antwort)
+        val1 = int(request.POST['num1'])
+        val2 = int(request.POST['num2'])
 
-    return render_template('eingabe.html', app_name="Tracker! - Eingabe")
+        res =  abs(10-(val1-val2))
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    context = {'res':res}
+    return render(request,'base/scale.html',context)
 
-from flask import Flask, render_template
-def main():
-    return render_template('index.html')
+def Search(request):
+
+	query = request.GET['query']
+	products = Movies.objects.filter(funny_film__icontains=query)
+	# sad_film = Movies.objects.filter(sad_film__icontains=query)
+	# products = funny_film.union(sad_film)
+	context = {'products':products}
+	return render(request,'base/search.html', context)
+
+
+def Search1(request):
+
+	query = request.GET['query']
+
+	products = Movies.objects.filter(sad_film__icontains=query)
+	# products = funny_film.union(sad_film)
+	context = {'products':products}
+	return render(request,'base/search.html', context)
+
+
+def Search2(request):
+
+	query = request.GET['query']
+
+	products = Movies.objects.filter(film_intense__icontains=query)
+	# products = funny_film.union(sad_film)
+	context = {'products':products}
+	return render(request,'base/search.html', context)
