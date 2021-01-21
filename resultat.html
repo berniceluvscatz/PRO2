@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta name="Autorin" content="Frances Knöpfel"/>
+      <meta name="Modul" content="Einführung Programmierung 2"/>
+
+    <title>Filmzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+
+    <h1>Filmzer</h1>
+
+
+    <h1>Filmzer</h1>
+  <h1>Hier ist deine Filmauswahl!</h1>
+  <br><br>
+
+
+
+
+    <div class="row">
+    		{% for movies in movie %}
+    		<div class="col-lg-4">
+
+
+    			<div class="box-element product">
+            <br>
+    				<h6><strong>Movie Name: {{movies.name}}</strong></h6>
+    				<hr>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Genre:  {{movies.genre}} </li>
+              <li class="list-group-item">Laenge : {{movies.laenge}}</li>
+              <li class="list-group-item">Jahr :   {{movies.jahr}}</li>
+                <li class="list-group-item">Regie :   {{movies.regie}}</li>
+                  <li class="list-group-item">IMDB :   {{movies.imdb_rating}}</li>
+            </ul>
+
+
+
+    			</div>
+    		</div>
+    		{% endfor %}
+    	</div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  </body>
+</html>
