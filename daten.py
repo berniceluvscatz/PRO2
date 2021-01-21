@@ -1,7 +1,8 @@
 import json
+with open('filme.json) as jsondata:
+    data = json.load(jsondata))
 
-
-def speichern(aktivitaet, dauer):
+def speichern(film_lustig, film_traurig, film_spannend):
 
     try:
         with open("datenbank.json", "r") as datenbank:
@@ -9,11 +10,11 @@ def speichern(aktivitaet, dauer):
     except:
         eintraege = []
 
-    eintrag = (aktivitaet, dauer)
+    eintrag = (film_lustig, film_traurig, film_spannend)
 
     eintraege.append(eintrag)
 
-    with open("datenbank.jason", "w") as datenbank:
-        json.dump(eintraege, datenbank)
+    with open("filme.jason", "w") as filme:
+        json.dump(eintraege, filme)
 
-    return "Daten gespeichert"
+    return "Eingabe gespeichert"
