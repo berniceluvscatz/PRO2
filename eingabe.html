@@ -1,65 +1,50 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+      <meta name="Autorin" content="Frances Knöpfel"/>
+      <meta name="Modul" content="Einführung Programmierung 2"/>
+
     <title>Filmzer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index'%}">
-        <img src="{% static 'images/logo.jpg'%}" alt="" width="30" height="24" class="d-inline-block align-top">
-        Filmzer
-      </a>
+
+<h1>Filmzer</h1>
+    
+<h2>Was für eine Art Film möchtest du heute schauen?</h2>
+                     
+<h4> Auf einer Skala von 1 bis 10, wie lustig soll der Film sein?</h4>
+<div class="eingabelustig"> 
+    <input type="zahl" class="form-control" user_funny="user_funny" placeholder="Hier kannst du eine Zahl zwischen 1 und 10 eingeben">
+    <div class="" style="padding:10px">
+        <a href="{% url 'happy'%}"><button  type="button" class="btn btn-outline-primary">Lustig</button></a>
     </div>
-  </nav>
+      </div>
+     
+<h4> Auf einer Skala von 1 bis 10, wie traurig soll der Film sein?</h4>
+<div class="eingabetraurig"> 
+    <input type="zahl" class="form-control" user_traurig="user_traurig" placeholder="Hier kannst du eine Zahl zwischen 1 und 10 eingeben">
+                   <div class="" style="padding:10px">
+                   <a href="{% url 'sad'%}"><button type="button" class="btn btn-outline-danger">Traurig</button></a>
+               </div>
 
-  <h1 style="text-align:center;">Scale</h1>
-  <hr>
-
-  <div class="container">
-
-    <!-- <h5>film recommendations scale</h5>
-
-    <form action="" method="POST">
-    {% csrf_token %}
-    Enter User Funny Number <input type=text, class="form-control" name = num1><br>
-    Enter Film Funny Number <input type=text, class="form-control"name = num2><br>
-    <input type="Submit" class="btn btn-primary">
-    <p>The Result is {{res}}</p>
-    </form> -->
-        <br>
-        <form class="form-inline my-2 my-lg-0" method="get" action="/search" >
-          Funny Movie:
-	      <input class="form-control mr-sm-2" type="search" placeholder="Enter Funny Movie scale Number" aria-label="Search" name="query" id="query">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Funny Movie</button>
-	     </form>
-
-       <br><br>
-
-       <form class="form-inline my-2 my-lg-0" method="get" action="/search1" >
-         Sad Movie:
-      <input class="form-control mr-sm-2" type="search" placeholder="Enter Sad Movie scale Number" aria-label="Search" name="query" id="query">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sad Movie</button>
-     </form>
-
-     <br><br>
-
-     <form class="form-inline my-2 my-lg-0" method="get" action="/search2" >
-       Intense Movie:
-    <input class="form-control mr-sm-2" type="search" placeholder="Enter Intense Movie scale Number" aria-label="Search" name="query" id="query">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Intense Movie</button>
-   </form>
+     </div>
+    
+<h4> Auf einer Skala von 1 bis 10, wie angespannt willst du sein?</h4>
+    <div class="eingabespannung">
+    <input type="zahl" class="form-control"
+           user_spannend="user_spannend" placeholder="Hier kannst du eine Zahl zwischen 1 und 10 eingeben">
+        <div class="" style="padding:10px">
+                   <a href="{% url 'sad'%}"><button type="button" class="btn btn-outline-danger">Enter</button></a>
+               </div>
+        </div>
 
 
 
 
 
-
-  </div>
-
+      <!-- </form> -->
 
   </body>
 </html>
