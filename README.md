@@ -1,9 +1,10 @@
-# PRO2
-Projektidee "Filmzer"
+#Semesterarbeit PROG2: FILMZER
 
-Wenn man keinen guten Film auf Netflix (oder wo auch immer) findet um zu schauen, wird man schnell ungeduldig. Deshalb dachte ich mir "Filmzer" aus. Ein Programm, welches dem User fragen stellt, um ihm dann einen vorgeschlagenen Film auszuspucken.
-Die Fragen könnten beispielsweise sein: "Bist du heute eher in Stimmung um zu Lachen oder zu Weinen?" und der User muss dann Antwort geben.
-Anhand von allen Antworten kann dann ein Film vorgeschlagen werden aus einer Datei mit einer Tabelle aus ca. 25 Filmen die ich zusammen stelle.
-Ich habe überlegt dass die Anworten eine Buchstabenkombination ergeben, welche dann einen "Code" zusammenstellen, um einen Film auszuspucken.
+Idee:
+Wenn man keinen guten Film auf Netflix (oder wo auch immer) findet um zu schauen, wird man schnell ungeduldig. Deshalb dachte ich mir "Filmzer" aus. Ein Programm, welches dem User fragen stellt, um ihm dann einen vorgeschlagenen Film auszuspucken. Dem User werden Fragen zu seiner aktuellen Stimmung gestellt. Beispielsweise wäre eine Frage "Auf einer Skala von 1 bis 10, wie lustig soll der Film sein den du heute schauen willst?" Der User kann dann in einem Feld eine Zahl von 1 bis 10 eingeben. Auf dieser Art werden weitere Fragen gestellt. Anhand von den Eingaben werden dann die Antworten mit meiner Film liste abgeglichen.
+Diese Liste wurde in einem json File eingetragen. Beispielsweise ist pro Film eine Zahl von 1 bis 10 zu "lustig" angegeben (und auch zu den weiteren Stimmungen.) So soll mein Programm dann die Eingaben von User zusammentragen und den passenden Film, oder mehrere, ausspucken.
 
-Meine Überlegung war, dass ich Filme aussuche und in eine Excel Tabelle eintrage mit den zugehörigen Details. Anhand von Genre (ich hätte es gerne noch genauer unterteilt nicht unbedingt nur Action etc, sondern eher nach Stimmung des Filmes oder so...), Filmlänge, Schauspieler?, Neuerscheinung oder Klassiker, ...
+In Bildern habe ich nun meine Web Applikation aufgezeichnet, damit man eine Vorstellung hat wie FILMZER aussehen soll. (File: Vorstellung_Filmzer)
+
+#Ablauf
+Dem User wird die Frage gestellt: "Auf einer
